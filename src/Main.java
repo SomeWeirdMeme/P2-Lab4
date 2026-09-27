@@ -34,6 +34,8 @@ public class Main {
         Dog dog = new Dog("Beagle", "Wells", 3);
         Animal animal1 = dog; // Upcasting Dog to Animal
         animal1.speak();
+
+        
 } 
 
     /*
