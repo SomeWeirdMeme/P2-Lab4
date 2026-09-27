@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Main {
+public class PolymorphismLab {
     public static void main (String[] args) {
         Cat myCat = new Cat("Black", "Ball", 4);
         Dog myDog = new Dog("Terrier", "Buddy", 3);
@@ -33,11 +33,21 @@ public class Main {
         //PART E:
         Dog dog = new Dog("Beagle", "Wells", 3);
         Animal animal1 = dog; // Upcasting Dog to Animal
+        //There is one Object created in memory, the reference type is Animal, 
+        // the actual object type is Dog. Yes they refer to the same object.
         animal1.speak();
 
-        
-} 
+        // PART F:
+        Animal animal2 = new Dog("jef", "ej", 3);
+        // animal2.fetch(); // This line will cause a compilation error because the reference type is Animal,
+        // which does not have a fetch() method.
+        // Part 2:
+        Dog dog2 = (Dog) animal2;
+        dog2.fetch();
 
+        // Part 2: 
+        // 
+    } 
     /*
     PART B: 
 
@@ -51,6 +61,6 @@ public class Main {
     correct method is called based on the actual object type (Dog, Cat, Frog) at runtime.
     */
 
-    //PART C:
+
     
 }
