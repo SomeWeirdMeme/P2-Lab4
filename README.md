@@ -10,7 +10,9 @@ I write my answer to the questions in side my main class.
 ArrayList<Animal> animals = new ArrayList<>();
 
 animals.add(new Dog("Buddy"));
+
 animals.add(new Cat("Mittens"));
+
 animals.add(new Frog("Kermit"));
 
 for (Animal animal : animals) {
