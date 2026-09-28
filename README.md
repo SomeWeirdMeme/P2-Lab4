@@ -22,8 +22,10 @@ for (Animal animal : animals) {
 Is the original and when I asked to make the unsafe downcast it gave me this.
 
 Animal a = animals.get(0);
+
 cat badCat = (Cat) a;
-badCat.scratch():
+
+badCat.scratch();
 
 Well as per usual it will throw a class exception and it does as I test since the index 0 is dog and not a CAT meaning actual obj type is DOG since its first in the list. Its unsafe cause downcast is forced for cat but it points to dog.
 
@@ -31,10 +33,15 @@ Well as per usual it will throw a class exception and it does as I test since th
  Animal a = animals.get(0);
 
  if(a instanceof Cat){
+ 
     Cat cat = (Cat) a ;
+
     cat.scratch();
+    
  } else {
+ 
     System.out.println("No cat")
+    
  }
  Essentially it properly uses instance of to refer to the cat and i added a fallback if the actual object type isn't recognized as cat.
 
