@@ -22,8 +22,11 @@ public class PolymorphismLab {
         animals.add(new Dog("e", "Max", 6));
         // I guess the output will be cat meow, dog bark, frog ribbit,cat meow, dog
         // bark.
-        for (Animal animal : animals)
-            animal.speak();
+         for (Animal animal : animals)
+             animal.speak();
+        // TESTING PART J: 
+        System.out.println("Testing makeAllAnimalsSpeak method:"); 
+        makeAllAnimalsSpeak(animals);
 
         // Part D:
         Animal animal = new Dog("Labrador", "Rex", 5);
@@ -62,6 +65,11 @@ public class PolymorphismLab {
             dog3.fetch();
         }
 
+        if(second instanceof Cat){
+            Cat cat = (Cat) second;
+            cat.scratch();
+        }
+
         if (second instanceof Dog) {
             Dog dog4 = (Dog) second;
             dog4.fetch();
@@ -74,7 +82,7 @@ public class PolymorphismLab {
         // Animal animal6 = new Cat("e", "dw", 2);
         // Dog dog6 = (Dog) animal6;
         // dog6.fetch();
-        
+
         // This will throw a ClassCastException at runtime because animal6 is actually a
         // Cat object,
         // and you cannot cast a Cat to a Dog.
@@ -102,5 +110,19 @@ public class PolymorphismLab {
     public static void makeAnimalSpeak(Animal animal) {
         animal.speak();
     }
+    // Well the reference type is Animal, but the actual object type is Dog, Cat, or Frog.
+    // However since the reference is Animal and they all are children of animal they inherit its properties.
+    // Its upcasted to Animal so it can be passed to the method. The method will call the correct speak() method based on the object type.
+    // But since each one has its own override of speak they output their own sounds instead of the Animal class speak.
 
+    // Part J:
+    public static void makeAllAnimalsSpeak(ArrayList<Animal> animals){
+        for(Animal animal : animals){
+            animal.speak();
+        }
+        //This is inherently better because it can reference outside this class,
+        // Puts them all in one place and makes it easier to call the method with different animals.
+        //No duplications
+        // New bird class as long as it extends animal there are no changes needed.
+    }
 }
